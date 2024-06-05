@@ -1,0 +1,33 @@
+<form class="submit-form" style="margin: 0 auto;margin-top: 100px;width: 20%;">
+
+
+    <div class="form-group">
+        <label for="id">ID</label>
+        <div class="d-flex" style="justify-content: space-between;align-items: end;">
+            <input type="text" class="form-control" id="id" placeholder="enter ID" [(ngModel)]="myId" name="id" style="width: 60%;">
+            <button style="width: 50px;height: 20px;" class="btn btn-success" (click)="getById()" style="width: 30%;height: 80%;">Find User</button>
+        </div>
+    </div>
+</form>
+
+@if(user.code){ 
+    <table class="table" style="width: 20%;margin: 0 auto;margin-top: 20px;">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ user.code }}</td> 
+                <td>{{ user.expireDate }}</td> 
+                <td>{{ user.limit }}</td> 
+                <td>{{ user.percent }}</td> 
+             
+            </tr>
+        </tbody>
+      </table>
+} @else {
+    <h1 style="width: 20%;margin: 0 auto;font-size: 30px;margin-top: 30px;">Ma'lumot topilmadi</h1>
+}
